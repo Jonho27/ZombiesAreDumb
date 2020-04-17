@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{A79B09A8-721F-1324-BF55-E9181F655BCF}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FlockingAlgorithm/Flock.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GeneticAlgorithm/GeneticPathfinder.cs" Line="93" Column="70" />
+      <File FileName="Assets/Scripts/GeneticAlgorithm/DNA.cs" />
+      <File FileName="Assets/Scripts/GeneticAlgorithm/PopulationController.cs" Line="109" Column="28" />
+      <File FileName="Assets/Genoma.txt" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/Flock.cs" Line="13" Column="10" />
+      <File FileName="Assets/Supercyan Character Pack Zombie Sample/Scripts/ZombieFree.cs" Line="1" Column="1" />
+      <File FileName="Assets/Supercyan Character Pack Zombie Sample/Scripts/ZombieCharacterControl.cs" Line="15" Column="1" />
+      <File FileName="Assets/Supercyan Character Pack Zombie Sample/Scripts/ZombieCameraLogic.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/WanderAI.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/FlockAgent.cs" Line="11" Column="5" />
+      <File FileName="Assets/Scripts/Chase.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/BehaviorScripts/CohesionBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/BehaviorScripts/AvoidanceBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/BehaviorScripts/AlignmentBehavior.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/BehaviorScripts/SteerCohesionBehavior.cs" />
+      <File FileName="Assets/Low Poly FPS Pack - Free (Sample)/Components/Scripts/Weapon_Scripts/HandgunScriptLPFP.cs" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4a5ffa45-e83e-4e08-b67b-09a5ccccc8eb" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
