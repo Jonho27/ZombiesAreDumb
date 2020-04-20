@@ -40,7 +40,7 @@ public class LogicaEnemigo : MonoBehaviour
         if (vida.valor <= 0)
         {
             vida0 = true;
-            gameObject.GetComponent<GeneticPathfinder>().hasFinished = true;
+            this.GetComponent<FlockAgent>().imDead = true;
         }
     }
 
@@ -49,8 +49,8 @@ public class LogicaEnemigo : MonoBehaviour
     {
         if(collision.collider.tag == "Bala")
         {
-            vida.valor -= 50;
-            Debug.Log("Vida del zombie: " + vida.valor);
+            gameObject.GetComponent<Vida>().recibirDaño(50f);
+
             
         }
     }

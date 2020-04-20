@@ -10,14 +10,30 @@ public class FlockAgent : MonoBehaviour
     
     
     Flock agentFlock;
+    public bool imDead;
     public Flock AgentFlock { get { return agentFlock; } }
     Collider agentCollider;
-    public Collider AgentCollider { get { return agentCollider; }} 
+    public Collider AgentCollider { get { return agentCollider; }}
+    public string myName;
+    public bool playerSeen;
+    public ChaseBrother chaseBrother;
+    public ChasePlayer chasePlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         
+        
+        if(this.gameObject.tag == "Blue")
+        {
+            chaseBrother = gameObject.GetComponent<ChaseBrother>();
+        }
+
+        else if (this.gameObject.tag == "Orange")
+        {
+            chasePlayer = gameObject.GetComponent<ChasePlayer>();
+        }
+        imDead = false;
         agentCollider = GetComponent<Collider>();
     }
 
@@ -33,11 +49,25 @@ public class FlockAgent : MonoBehaviour
 
     public void Move(Vector3 velocity)
     {
-        if (gameObject.GetComponent<Chase>().playerSeen == false)
+        if(chaseBrother != null)
         {
-            transform.forward = velocity;
-            transform.position += velocity * Time.deltaTime;
+            if (!chaseBrother.playerSeen)
+            {
+                transform.forward = velocity;
+                transform.position += velocity * Time.deltaTime;
+            }
         }
+
+        else
+        {
+            if (!chasePlayer.playerSeen)
+            {
+                transform.forward = velocity;
+                transform.position += velocity * Time.deltaTime;
+            }
+        }
+
+        
         
     }
 

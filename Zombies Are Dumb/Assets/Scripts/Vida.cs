@@ -5,6 +5,7 @@ using UnityEngine;
 public class Vida : MonoBehaviour
 {
     public float valor = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,15 @@ public class Vida : MonoBehaviour
         if (valor < 0)
         {
             valor = 0;
+        }
+    }
+
+    public void recuperarSalud(float salud)
+    {
+        valor += salud;
+        if(valor > 100)
+        {
+            valor = 100;
         }
     }
 }

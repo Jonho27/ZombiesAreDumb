@@ -53,16 +53,27 @@ public class Flock : MonoBehaviour
 
         foreach(FlockAgent agent in agents)
         {
-            List<Transform> context = GetNearbyObjects(agent);
-
-            Vector3 move = behavior.CalculateMove(agent, context, this);
-            move *= driveFactor;
-            if(move.sqrMagnitude > squareMaxSpeed)
+            if (agent.imDead)
             {
-                move = move.normalized * maxSpeed;
+                agents.Remove(agent);
+                Destroy(agent.gameObject);
             }
 
-            agent.Move(move);
+            else
+            {
+                List<Transform> context = GetNearbyObjects(agent);
+
+                Vector3 move = behavior.CalculateMove(agent, context, this);
+                move *= driveFactor;
+                if (move.sqrMagnitude > squareMaxSpeed)
+                {
+                    move = move.normalized * maxSpeed;
+                }
+
+                agent.Move(move);
+
+            }
+
 
         }
     }

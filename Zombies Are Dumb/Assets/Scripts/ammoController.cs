@@ -19,7 +19,7 @@ public class ammoController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Jugador")
+        if (other.tag == "Player")
         {
             if (Input.GetButton("Interact"))
             {

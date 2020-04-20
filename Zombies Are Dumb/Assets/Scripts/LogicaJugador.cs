@@ -7,11 +7,13 @@ using UnityEngine.SceneManagement;
 public class LogicaJugador : MonoBehaviour
 {
     public Vida vida;
+    public GameObject hermano;
     public bool vida0 = false;
     // Start is called before the first frame update
     void Start()
     {
         vida = GetComponent<Vida>();
+        
 
     }
 
@@ -31,13 +33,15 @@ public class LogicaJugador : MonoBehaviour
         if (vida.valor <= 0)
         {
             vida0 = true;
-            Invoke("ReiniciarJuego", 2f);
 
         }
     }
 
-    void ReiniciarJuego()
+    private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(other.gameObject.tag == "Casa" && hermano.GetComponent<brotherController>().playerSeen)
+        {
+            Debug.Log("Has ganado");
+        }
     }
 }

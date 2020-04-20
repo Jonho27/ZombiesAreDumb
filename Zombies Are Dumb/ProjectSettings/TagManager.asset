@@ -11,6 +11,11 @@ TagManager:
   - Metal
   - Goal
   - Obstacle
+  - TalkingCharacter
+  - Casa
+  - Brother
+  - Blue
+  - Orange
   layers:
   - Default
   - TransparentFX

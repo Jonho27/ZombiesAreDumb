@@ -76,7 +76,11 @@
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Scripts\Weapon_Scripts\AutomaticGunScriptLPFP.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Scripts\Weapon_Scripts\HandgunScriptLPFP.cs" />
     <Compile Include="Assets\Scripts\ammoController.cs" />
+    <Compile Include="Assets\Scripts\brotherController.cs" />
     <Compile Include="Assets\Scripts\Chase.cs" />
+    <Compile Include="Assets\Scripts\ChaseBrother.cs" />
+    <Compile Include="Assets\Scripts\ChasePlayer.cs" />
+    <Compile Include="Assets\Scripts\firstAidController.cs" />
     <Compile Include="Assets\Scripts\FlockingAlgorithm\BehaviorScripts\AlignmentBehavior.cs" />
     <Compile Include="Assets\Scripts\FlockingAlgorithm\BehaviorScripts\AvoidanceBehavior.cs" />
     <Compile Include="Assets\Scripts\FlockingAlgorithm\BehaviorScripts\CohesionBehavior.cs" />
@@ -98,6 +102,9 @@
     <Compile Include="Assets\Scripts\MenuButton.cs" />
     <Compile Include="Assets\Scripts\Vida.cs" />
     <Compile Include="Assets\Scripts\WanderAI.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogic.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\Demo.cs" />
+    <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleCharacterControl.cs" />
     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCameraLogic.cs" />
     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCharacterControl.cs" />
     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieFree.cs" />
