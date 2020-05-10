@@ -15,7 +15,6 @@ public class PopulationController : MonoBehaviour
 	public float mutationRate = 0.01f;
     public Transform spawnPoint;
     public Transform end;
-    public static Animator animator;
     public float tiempo = 0.0f;
 
     void InitPopulation()
@@ -25,11 +24,8 @@ public class PopulationController : MonoBehaviour
         {
             GameObject go = Instantiate(creaturePrefab, spawnPoint.position, Quaternion.identity);
             go.GetComponent<GeneticPathfinder>().InitCreature(new DNA(Application.dataPath + "/Genoma.txt", i, populationSize, genomeLenght), end.position, i);
-            go.AddComponent<Animator>();
-            animator = go.GetComponent<Animator>();
-            animator.runtimeAnimatorController = (RuntimeAnimatorController)Instantiate(Resources.Load("zombieAnimator"));
-            go.GetComponent<Animator>().SetBool("isOver", false);
-            go.name = "Zombie";
+            go.GetComponent<Animator>().SetBool("isDead", false);
+            go.name = "Zombie." + i;
             population.Add(go.GetComponent<GeneticPathfinder>());
         }
 
@@ -47,12 +43,27 @@ public class PopulationController : MonoBehaviour
             survivors.Add(GetFittest());
             
         }
+
+        Debug.Log("Tamaño de poblacion: " + population.Count);
+
         for(int i = 0; i < population.Count; i++)
         {
-            //Destroy(population[i].gameObject);
-            population[i].gameObject.GetComponent<WanderAI>().enabled = true;
-            GeneticPathfinder exp = population[i].gameObject.GetComponent<GeneticPathfinder>();
-            Destroy(exp);
+            Debug.Log("Bucle iteracion: " + i);
+            Debug.Log("Bucle zombie: " + population[i].gameObject.name);
+
+            if (population[i].gameObject.GetComponent<LogicaEnemigo>().isDead)
+            {
+                Debug.Log("Soy: " + population[i].gameObject.name + " y muero.");
+                Destroy(population[i].gameObject);
+            }
+
+            else
+            {
+                Debug.Log("Soy: " + population[i].gameObject.name + " y deberia desactivar genetica y activar chase.");
+                population[i].gameObject.GetComponent<GeneticPathfinder>().enabled = false;
+                population[i].gameObject.GetComponent<Chase>().enabled = true;
+            }
+            
            
         }
         population.Clear();
@@ -62,11 +73,8 @@ public class PopulationController : MonoBehaviour
             
 			GameObject go = Instantiate(creaturePrefab, spawnPoint.position, Quaternion.identity);
 			go.GetComponent<GeneticPathfinder>().InitCreature(survivors[i].dna, end.position, i);
-            go.AddComponent<Animator>();
-            animator = go.GetComponent<Animator>();
-            animator.runtimeAnimatorController = (RuntimeAnimatorController)Instantiate(Resources.Load("zombieAnimator"));
-            go.GetComponent<Animator>().SetBool("isOver", false);
-            go.name = "Zombie";
+            go.GetComponent<Animator>().SetBool("isDead", false);
+            go.name = "ZombieSurvivor." + i;
             population.Add(go.GetComponent<GeneticPathfinder>());
 
 		}
@@ -77,11 +85,8 @@ public class PopulationController : MonoBehaviour
                
                 GameObject go = Instantiate(creaturePrefab, spawnPoint.position, Quaternion.identity);
                 go.GetComponent<GeneticPathfinder>().InitCreature(new DNA(survivors[i].dna, survivors[Random.Range(0, survivorCut)].dna, mutationRate), end.position, i);
-                go.AddComponent<Animator>();
-                animator = go.GetComponent<Animator>();
-                animator.runtimeAnimatorController = (RuntimeAnimatorController)Instantiate(Resources.Load("zombieAnimator"));
-                go.GetComponent<Animator>().SetBool("isOver", false);
-                go.name = "Zombie";
+                go.GetComponent<Animator>().SetBool("isDead", false);
+                go.name = "ZombieMutado." + i;
                 population.Add(go.GetComponent<GeneticPathfinder>());
                 if(population.Count >= populationSize)
                 {
@@ -91,11 +96,8 @@ public class PopulationController : MonoBehaviour
         }
         for(int i = 0; i < survivors.Count; i++)
         {
-            survivors[i].gameObject.GetComponent<WanderAI>().enabled = true;
-            GeneticPathfinder exp = survivors[i].gameObject.GetComponent<GeneticPathfinder>();
-            Destroy(exp);
-            //Destroy(survivors[i].gameObject);
-
+            
+            
         }
     }
     private void Start()
@@ -106,7 +108,7 @@ public class PopulationController : MonoBehaviour
     {
         tiempo += Time.deltaTime;
 
-        if (!HasActive() /*&& (tiempo.ToString("0") == "60" || tiempo.ToString("0") == "180" || tiempo.ToString("0") == "280" || tiempo.ToString("0") == "350")*/)
+        if (!HasActive() && (tiempo.ToString("0") == "180" || tiempo.ToString("0") == "280" || tiempo.ToString("0") == "350"))
         {
             
             NextGeneration();
@@ -148,9 +150,6 @@ public class PopulationController : MonoBehaviour
 
         string path = Application.dataPath + "/Genoma.txt";
         File.WriteAllText(path, "");
-
-        
-
         for(int i = 0; i < population.Count; i++)
         {
             
@@ -165,10 +164,6 @@ public class PopulationController : MonoBehaviour
                 File.AppendAllText(path, "\n");
             }
         }
-
-        
-
-
     }
 
     

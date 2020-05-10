@@ -2,18 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LogicaJugador : MonoBehaviour
 {
     public Vida vida;
     public GameObject hermano;
-    public bool vida0 = false;
+    
+    public Text currentLifeText;
+    public Text totalLifeText;
     // Start is called before the first frame update
     void Start()
     {
         vida = GetComponent<Vida>();
-        
+        totalLifeText.text = "100";
 
     }
 
@@ -21,18 +24,18 @@ public class LogicaJugador : MonoBehaviour
     void Update()
     {
         RevisarVida();
+        currentLifeText.text = vida.valor.ToString();
+        
     }
 
     void RevisarVida()
     {
-        if (vida0)
-        {
-            return;
-        }
+        
 
         if (vida.valor <= 0)
         {
-            vida0 = true;
+            
+            SceneManager.LoadScene("GameOver1");
 
         }
     }
@@ -42,6 +45,18 @@ public class LogicaJugador : MonoBehaviour
         if(other.gameObject.tag == "Casa" && hermano.GetComponent<brotherController>().playerSeen)
         {
             Debug.Log("Has ganado");
+            SceneManager.LoadScene("Win");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Blue" || collision.transform.tag == "Orange" || collision.transform.tag == "Genetic")
+        {
+            if (Input.GetButton("KnifeAttack"))
+            {
+                collision.gameObject.GetComponent<Vida>().recibirDaño(20f);
+            }
         }
     }
 }

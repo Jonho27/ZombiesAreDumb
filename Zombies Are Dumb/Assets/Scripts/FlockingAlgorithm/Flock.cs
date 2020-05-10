@@ -56,6 +56,7 @@ public class Flock : MonoBehaviour
             if (agent.imDead)
             {
                 agents.Remove(agent);
+
                 Destroy(agent.gameObject);
             }
 

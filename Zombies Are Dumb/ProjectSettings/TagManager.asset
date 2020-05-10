@@ -16,6 +16,7 @@ TagManager:
   - Brother
   - Blue
   - Orange
+  - Genetic
   layers:
   - Default
   - TransparentFX

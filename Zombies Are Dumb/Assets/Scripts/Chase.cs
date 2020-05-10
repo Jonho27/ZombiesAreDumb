@@ -8,14 +8,15 @@ public class Chase : MonoBehaviour
     public Animator anim;
     public bool playerSeen = false;
     public float cooldown;
+    
 
-    /*public float moveSpeed = 0.8f;
+    public float moveSpeed = 0.8f;
     public float rotSpeed = 100f;
 
     private bool isWandering = false;
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
-    private bool isWalking = false;*/
+    private bool isWalking = false;
 
 
     // Start is called before the first frame update
@@ -29,6 +30,8 @@ public class Chase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         cooldown -= Time.deltaTime;
         Vector3 direction = player.position - this.transform.position;
         float angle = Vector3.Angle(direction, this.transform.forward);
@@ -38,8 +41,6 @@ public class Chase : MonoBehaviour
             playerSeen = true;
             direction.y = 0;
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
-
-            
 
             if(direction.magnitude > 2.5)
             {
@@ -69,11 +70,11 @@ public class Chase : MonoBehaviour
         {
             //Debug.Log("Playerseen ya no");
             playerSeen = false;
-           // anim.SetBool("isWalking", true);
-            //anim.SetBool("isAttacking", false);
+            anim.SetBool("isWalking", true);
+            anim.SetBool("isAttacking", false);
             
 
-            /*if (!isWandering)
+            if (!isWandering)
             {
                 StartCoroutine(Wander());
             }
@@ -82,7 +83,6 @@ public class Chase : MonoBehaviour
             {
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isWalking", false);
-                anim.SetBool("isIdle", true);
                 transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
             }
 
@@ -90,7 +90,6 @@ public class Chase : MonoBehaviour
             {
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isWalking", false);
-                anim.SetBool("isIdle", true);
                 transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
             }
 
@@ -98,15 +97,14 @@ public class Chase : MonoBehaviour
             {
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isWalking", true);
-                anim.SetBool("isIdle", false);
                 transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            }*/
+            }
         }
     }
 
 
 
-    /*IEnumerator Wander()
+    IEnumerator Wander()
     {
         int rotTime = Random.Range(1, 3);
         int rotateWait = Random.Range(1, 4);
@@ -138,16 +136,17 @@ public class Chase : MonoBehaviour
         isWandering = false;
     }
 
-    [System.Obsolete]
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 8)
         {
 
-            transform.RotateAroundLocal(new Vector3(0f, 1f, 0f), 180f);
+            transform.RotateAround(Vector3.up, 180);
 
         }
 
         
-    }*/
+    }
+
 }

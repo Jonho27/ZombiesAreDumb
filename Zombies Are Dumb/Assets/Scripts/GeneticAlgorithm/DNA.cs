@@ -15,6 +15,8 @@ public class DNA
         }
     }
 
+
+
     public DNA(string path, int id, int populationSize, int genomeLenght = 5)
     {
         TextReader tr = new StreamReader(path);
@@ -23,10 +25,8 @@ public class DNA
         string[] ListLines = new string[NumberOfLines];
         int index = id * 3 * genomeLenght;
 
-
         if (NumberOfLines > 0)
-        {
-            
+        {   
             for (int l = 0; l <= genomeLenght * 3 * populationSize; l++)
             {
                 ListLines[l] = tr.ReadLine();
@@ -36,16 +36,12 @@ public class DNA
             for (int j = 0; j < genomeLenght; j++)
             {
                 genes.Add(new Vector3(float.Parse(ListLines[index + j]), float.Parse(ListLines[index + 1 + j]), float.Parse(ListLines[index + 2 + j])));
-                //Debug.Log("Zombie " + id + ": Coordenadas: X = " + float.Parse(ListLines[index + j]) + ", Y = " + float.Parse(ListLines[index + 1 + j]) + ", Z = " + float.Parse(ListLines[index + 2 + j]));
                 index = index + 2;
-
-
             }
         }
 
         else
         {
-            
             for (int j = 0; j < genomeLenght; j++)
             {
                 genes.Add(new Vector3(Random.Range(-1.0f, 1.0f), 0f, Random.Range(-1.0f, 1.0f)));

@@ -56,7 +56,7 @@ public class ChasePlayer : MonoBehaviour
                 if (cooldown <= 0f)
                 {
                     player.GetComponent<Vida>().recibirDaño(5f);
-                    cooldown = 5f;
+                    cooldown = 2f;
                 }
 
 

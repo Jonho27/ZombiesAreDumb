@@ -10,28 +10,23 @@ public class GeneticPathfinder : MonoBehaviour
     int pathIndex = 0;
     public DNA dna;
     public bool hasFinished = false;
-
     public int identifier;
     public LayerMask obstacleLayer;
-
     bool hasBeenInitialized = false;
 	bool hasCrashed = false;
-	List<Vector3> travelledPath = new List<Vector3>();
     Vector3 target;
     Vector3 nextPoint;
 	Quaternion targetRotation;
-	//LineRenderer lr;
+
     public void InitCreature(DNA newDna, Vector3 _target, int id)
     {
-		travelledPath.Add(transform.position);
-		//lr = GetComponent<LineRenderer>();
         dna = newDna;
         target = _target;
         nextPoint = transform.position;
-		travelledPath.Add(nextPoint);
         hasBeenInitialized = true;
         identifier = id;
     }
+
     private void Update()
     {
         if (hasBeenInitialized && !hasFinished)
@@ -44,7 +39,7 @@ public class GeneticPathfinder : MonoBehaviour
             if((Vector3)transform.position == nextPoint)
             {
                 nextPoint = (Vector3)transform.position + dna.genes[pathIndex] * pathMultiplier;
-				travelledPath.Add(nextPoint);
+				
                 Vector3 lookPos = nextPoint - transform.position;
                 lookPos.y = 0;
                 targetRotation = Quaternion.LookRotation(lookPos);
@@ -62,23 +57,11 @@ public class GeneticPathfinder : MonoBehaviour
 
         if (hasFinished)
         {
-            //gameObject.GetComponent<Animator>().SetBool("isOver", true);
-
-            //StartCoroutine(Desaparecer());
-
-           
-
-            
+            this.gameObject.GetComponent<Chase>().enabled = true;
         }
-    }
-
-    IEnumerator Desaparecer()
-    {
-        yield return new WaitForSeconds(1.75f);
-        gameObject.transform.localScale = new Vector3(0, 0, 0);
 
     }
-	
+
     public float fitness
     {
         get

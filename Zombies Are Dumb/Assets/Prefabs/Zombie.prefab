@@ -170,10 +170,11 @@ GameObject:
   - component: {fileID: 3996564413793900147}
   - component: {fileID: 4839021365995837207}
   - component: {fileID: -7050524060211659834}
-  - component: {fileID: -7627067792293171762}
+  - component: {fileID: -8554999073996924065}
+  - component: {fileID: -6619306811733318314}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: Genetic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,14 +237,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421fe6bdfe43d4eebb6733ccfdc60fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creatureSpeed: 5
+  creatureSpeed: 200
   pathMultiplier: 2
   rotationSpeed: 180
   hasFinished: 0
   identifier: 0
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
 --- !u!114 &4839021365995837207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +273,12 @@ MonoBehaviour:
   vida0: 0
   estaAtacando: 0
   "da\xF1o": 25
---- !u!114 &-7627067792293171762
+  myFlockAgent: {fileID: 0}
+  myGeneticPathfinder: {fileID: 0}
+  myChase: {fileID: 0}
+  geneticaNoNecesaria: 0
+  isDead: 0
+--- !u!114 &-8554999073996924065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,11 +287,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 4789952190074513523}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4204d272842ff43f38b22cf52d4c8572, type: 3}
+  m_Script: {fileID: 11500000, guid: 08aa79fee34664eb5b7f965e02af4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  anim: {fileID: 0}
+  playerSeen: 0
+  cooldown: 0
   moveSpeed: 0.8
   rotSpeed: 100
+--- !u!95 &-6619306811733318314
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789952190074513523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 8c53cffd52097cf4582f0a090c9a833e, type: 3}
+  m_Controller: {fileID: 9100000, guid: 8f0d4490c07c7435092559fac799efd7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4789962332567733561
 GameObject:
   m_ObjectHideFlags: 0

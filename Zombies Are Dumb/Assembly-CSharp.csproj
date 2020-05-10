@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\LogicaEnemigo.cs" />
     <Compile Include="Assets\Scripts\LogicaJugador.cs" />
     <Compile Include="Assets\Scripts\MenuButton.cs" />
+    <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\Vida.cs" />
     <Compile Include="Assets\Scripts\WanderAI.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogic.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCameraLogic.cs" />
     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCharacterControl.cs" />
     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieFree.cs" />
+    <Compile Include="Assets\Videos\videoManager.cs" />
     <None Include="Assets\Survival Tools\ReadMe\ReadMe.txt" />
     <None Include="Assets\Genoma.txt" />
     <Reference Include="Unity.Timeline.Editor">

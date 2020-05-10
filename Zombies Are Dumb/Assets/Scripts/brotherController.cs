@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class brotherController : MonoBehaviour
 {
@@ -21,12 +22,13 @@ public class brotherController : MonoBehaviour
         if(gameObject.GetComponent<Vida>().valor <= 0)
         {
             Debug.Log("Has perdido");
+            SceneManager.LoadScene("GameOver2");
         }
 
         Vector3 direction = player.position - this.transform.position;
         float angle = Vector3.Angle(direction, this.transform.forward);
 
-        if (Vector3.Distance(player.position, this.transform.position) < 10 && angle < 45)
+        if (Vector3.Distance(player.position, this.transform.position) < 12 && angle < 45)
         {
             anim.SetBool("isWalking", false);
             anim.SetBool("isIdle", false);
@@ -37,7 +39,7 @@ public class brotherController : MonoBehaviour
 
 
 
-            if (direction.magnitude > 2.5 && direction.magnitude < 8)
+            if (direction.magnitude > 3.5 && direction.magnitude < 10)
             {
                 anim.SetBool("isIdle", false);
                 anim.SetBool("isHello", false);

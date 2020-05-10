@@ -419,7 +419,7 @@ public class HandgunScriptLPFP : MonoBehaviour {
 		}
 
 		//Running when pressing down W and Left Shift key
-		if ((Input.GetKey (KeyCode.W) && (Input.GetKey (KeyCode.LeftShift)) || (Input.GetButton("Run")) ))
+		if ((Input.GetKey (KeyCode.W) && (Input.GetKey (KeyCode.Tab)) || (Input.GetButton("Run")) ))
 		{
 			isRunning = true;
 		} else {
