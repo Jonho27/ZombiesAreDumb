@@ -643,6 +643,8 @@ MonoBehaviour:
   myChase: {fileID: 0}
   geneticaNoNecesaria: 0
   isDead: 0
+  bloodEffect: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069,
+    type: 3}
 --- !u!114 &1099339965138958369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +673,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 81ecddf807b43443a9fd7b31c54c14ea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -864,8 +866,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4196b6c12e71544af97b70b73dd6aedc, type: 2}
-  - {fileID: 2100000, guid: 02a0efdcf10bc4625a5ddbeffa107fc8, type: 2}
+  - {fileID: 2100000, guid: 9fb1835b082c0a54e90f8fee1335b69f, type: 2}
+  - {fileID: 2100000, guid: 505c715e0fdb50f4fb8e906ce5e8d288, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

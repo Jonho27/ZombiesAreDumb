@@ -9,6 +9,7 @@ public class DNA
     public List<Vector3> genes = new List<Vector3>();
     public DNA(int genomeLenght = 5)
     {
+        //Debug.Log("Lo hago random");
         for(int i = 0; i < genomeLenght; i++)
         {
             genes.Add(new Vector3(Random.Range(-1.0f, 1.0f), 0f, Random.Range(-1.0f, 1.0f)));
@@ -21,10 +22,9 @@ public class DNA
     {
         TextReader tr = new StreamReader(path);
         int NumberOfLines = (int)new FileInfo(path).Length;
-        //Debug.Log("Numero de lineas: " + NumberOfLines);
         string[] ListLines = new string[NumberOfLines];
         int index = id * 3 * genomeLenght;
-
+        //Debug.Log("Leo la info de: " + path);
         if (NumberOfLines > 0)
         {   
             for (int l = 0; l <= genomeLenght * 3 * populationSize; l++)

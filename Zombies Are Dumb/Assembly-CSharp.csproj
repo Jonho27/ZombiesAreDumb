@@ -63,6 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
+    <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
+    <Compile Include="Assets\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Demo_Scene_Components\Scripts\DebrisScript.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Demo_Scene_Components\Scripts\ExplosiveBarrelScript.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Demo_Scene_Components\Scripts\TargetScript.cs" />
@@ -76,10 +84,14 @@
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Scripts\Weapon_Scripts\AutomaticGunScriptLPFP.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Scripts\Weapon_Scripts\HandgunScriptLPFP.cs" />
     <Compile Include="Assets\Scripts\ammoController.cs" />
+    <Compile Include="Assets\Scripts\audioSettings.cs" />
     <Compile Include="Assets\Scripts\brotherController.cs" />
     <Compile Include="Assets\Scripts\Chase.cs" />
     <Compile Include="Assets\Scripts\ChaseBrother.cs" />
     <Compile Include="Assets\Scripts\ChasePlayer.cs" />
+    <Compile Include="Assets\Scripts\checkScene.cs" />
+    <Compile Include="Assets\Scripts\ChooseDifficulty.cs" />
+    <Compile Include="Assets\Scripts\difficultySelector.cs" />
     <Compile Include="Assets\Scripts\firstAidController.cs" />
     <Compile Include="Assets\Scripts\FlockingAlgorithm\BehaviorScripts\AlignmentBehavior.cs" />
     <Compile Include="Assets\Scripts\FlockingAlgorithm\BehaviorScripts\AvoidanceBehavior.cs" />
@@ -101,6 +113,10 @@
     <Compile Include="Assets\Scripts\LogicaJugador.cs" />
     <Compile Include="Assets\Scripts\MenuButton.cs" />
     <Compile Include="Assets\Scripts\MenuController.cs" />
+    <Compile Include="Assets\Scripts\Music.cs" />
+    <Compile Include="Assets\Scripts\SettingsMenu.cs" />
+    <Compile Include="Assets\Scripts\SoundScript.cs" />
+    <Compile Include="Assets\Scripts\tutorialController.cs" />
     <Compile Include="Assets\Scripts\Vida.cs" />
     <Compile Include="Assets\Scripts\WanderAI.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogic.cs" />
@@ -110,31 +126,20 @@
     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieCharacterControl.cs" />
     <Compile Include="Assets\Supercyan Character Pack Zombie Sample\Scripts\ZombieFree.cs" />
     <Compile Include="Assets\Videos\videoManager.cs" />
+    <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
+    <None Include="Assets\GenomaPrueba.txt" />
     <None Include="Assets\Survival Tools\ReadMe\ReadMe.txt" />
-    <None Include="Assets\Genoma.txt" />
+    <None Include="Assets\GenomaDificil.txt" />
+    <None Include="Assets\GenomaNormal.txt" />
+    <None Include="Assets\GenomaFacil.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/Users/jonhodei/Desktop/Estudios/TFG/Zombies Are Dumb/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

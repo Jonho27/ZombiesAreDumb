@@ -18,6 +18,7 @@ public class LogicaEnemigo : MonoBehaviour
     public Chase myChase;
     public bool geneticaNoNecesaria = false;
     public bool isDead;
+    public GameObject bloodEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -113,10 +114,16 @@ public class LogicaEnemigo : MonoBehaviour
     {
         if(collision.collider.tag == "Bala")
         {
+            crearEfectoSangre(collision.transform.position, collision.transform.rotation);
             gameObject.GetComponent<Vida>().recibirDaño(50f);
-
-            
         }
+
+    }
+
+    public void crearEfectoSangre(Vector3 pos, Quaternion rot)
+    {
+        GameObject efectoSangre = Instantiate(bloodEffect, pos, rot);
+        Destroy(efectoSangre, 1f);
     }
 
 

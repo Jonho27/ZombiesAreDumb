@@ -5,7 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour
 {
-	public void PlayGame()
+
+    public static bool audioOn;
+
+    public void Start()
+    {
+
+    }
+
+    private void Update()
+    {
+
+    }
+
+    public void PlayGame()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
@@ -17,5 +30,14 @@ public class MenuButton : MonoBehaviour
 	}    public void GoMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }    public void Tutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }    public void Intro()
+    {
+        SceneManager.LoadScene("Intro");
     }
 }

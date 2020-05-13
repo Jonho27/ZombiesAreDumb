@@ -16,6 +16,8 @@ public class PopulationController : MonoBehaviour
     public Transform spawnPoint;
     public Transform end;
     public float tiempo = 0.0f;
+    public string subname;
+    public bool saveGenes = false;
 
     void InitPopulation()
     {
@@ -23,7 +25,7 @@ public class PopulationController : MonoBehaviour
         for (int i = 0; i < populationSize; i++)
         {
             GameObject go = Instantiate(creaturePrefab, spawnPoint.position, Quaternion.identity);
-            go.GetComponent<GeneticPathfinder>().InitCreature(new DNA(Application.dataPath + "/Genoma.txt", i, populationSize, genomeLenght), end.position, i);
+            go.GetComponent<GeneticPathfinder>().InitCreature(new DNA(Application.dataPath + subname, i, populationSize, genomeLenght), end.position, i);
             go.GetComponent<Animator>().SetBool("isDead", false);
             go.name = "Zombie." + i;
             population.Add(go.GetComponent<GeneticPathfinder>());
@@ -33,7 +35,11 @@ public class PopulationController : MonoBehaviour
     }
     void NextGeneration()
     {
-        createText(population);
+        if (saveGenes)
+        {
+            createText(population);
+        }
+        
 
         int survivorCut = Mathf.RoundToInt(populationSize * cutoff);
         List<GeneticPathfinder> survivors = new List<GeneticPathfinder>();
@@ -44,27 +50,30 @@ public class PopulationController : MonoBehaviour
             
         }
 
-        Debug.Log("Tamaño de poblacion: " + population.Count);
 
         for(int i = 0; i < population.Count; i++)
         {
-            Debug.Log("Bucle iteracion: " + i);
-            Debug.Log("Bucle zombie: " + population[i].gameObject.name);
+            Destroy(population[i].gameObject);
+
+            //Debug.Log("Bucle iteracion: " + i);
+            //Debug.Log("Bucle zombie: " + population[i].gameObject.name);
 
             if (population[i].gameObject.GetComponent<LogicaEnemigo>().isDead)
             {
-                Debug.Log("Soy: " + population[i].gameObject.name + " y muero.");
+                //Debug.Log("Soy: " + population[i].gameObject.name + " y muero.");
                 Destroy(population[i].gameObject);
             }
 
             else
             {
-                Debug.Log("Soy: " + population[i].gameObject.name + " y deberia desactivar genetica y activar chase.");
+                //Debug.Log("Soy: " + population[i].gameObject.name + " y deberia desactivar genetica y activar chase.");
                 population[i].gameObject.GetComponent<GeneticPathfinder>().enabled = false;
                 population[i].gameObject.GetComponent<Chase>().enabled = true;
             }
-            
-           
+
+
+
+
         }
         population.Clear();
 
@@ -94,21 +103,45 @@ public class PopulationController : MonoBehaviour
                 }
             }
         }
-        for(int i = 0; i < survivors.Count; i++)
+        /*for(int i = 0; i < survivors.Count; i++)
         {
+            Destroy(survivors[i].gameObject);
             
-            
-        }
+        }*/
     }
     private void Start()
     {
+        if (ChooseDifficulty.difficulty == 0)
+        {
+            populationSize = 10;
+            subname = "/GenomaFacil.txt";
+        }
+
+        else if(ChooseDifficulty.difficulty == 1)
+        {
+            populationSize = 15;
+            subname = "/GenomaNormal.txt";
+        }
+
+        else if(ChooseDifficulty.difficulty == 2)
+        {
+            populationSize = 25;
+            subname = "/GenomaDificil.txt";
+        }
+
+        /*else if (ChooseDifficulty.difficulty == 3)
+        {
+            populationSize = 200;
+            subname = "/GenomaPrueba.txt";
+        }*/
+
         InitPopulation();
     }
     private void Update()
     {
         tiempo += Time.deltaTime;
 
-        if (!HasActive() && (tiempo.ToString("0") == "180" || tiempo.ToString("0") == "280" || tiempo.ToString("0") == "350"))
+        if (!HasActive() && tiempo%120f == 0f /*&& (tiempo.ToString("0") == "180" || tiempo.ToString("0") == "280" || tiempo.ToString("0") == "350")*/)
         {
             
             NextGeneration();
@@ -131,7 +164,8 @@ public class PopulationController : MonoBehaviour
         }
 
         GeneticPathfinder fittest = population[index];
-        population.Remove(fittest);
+        //Debug.Log("Fittest: " + index);
+        //population.Remove(fittest);
         return fittest;
     }
     bool HasActive()
@@ -148,11 +182,10 @@ public class PopulationController : MonoBehaviour
 
     public void createText(List<GeneticPathfinder> population) {
 
-        string path = Application.dataPath + "/Genoma.txt";
+        string path = Application.dataPath + subname;
         File.WriteAllText(path, "");
         for(int i = 0; i < population.Count; i++)
         {
-            
             for (int j = 0; j < genomeLenght; j++)
             {
 

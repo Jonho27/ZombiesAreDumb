@@ -32,6 +32,20 @@ public class Flock : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
+        if (ChooseDifficulty.difficulty == 0)
+        {
+            startingCount = 5;
+        }
+
+        else if (ChooseDifficulty.difficulty == 1)
+        {
+            startingCount = 10;
+        }
+
+        else if (ChooseDifficulty.difficulty == 2)
+        {
+            startingCount = 15;
+        }
         spawnPosition = gameObject.transform.position;
 		squareMaxSpeed = maxSpeed * maxSpeed;
 		squareNeighbourRadius = neighbourRadius * neighbourRadius;
@@ -50,6 +64,10 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(agents.Count == 0)
+        {
+            Destroy(gameObject);
+        }
 
         foreach(FlockAgent agent in agents)
         {

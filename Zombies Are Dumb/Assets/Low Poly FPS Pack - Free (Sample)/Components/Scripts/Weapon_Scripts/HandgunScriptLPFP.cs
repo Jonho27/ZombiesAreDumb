@@ -90,6 +90,7 @@ public class HandgunScriptLPFP : MonoBehaviour {
 	public bool randomMuzzleflash = false;
 	//min should always bee 1
 	private int minRandomValue = 1;
+    public GameObject bloodEffect;
 
 	[Range(2, 25)]
 	public int maxRandomValue = 5;
@@ -611,5 +612,7 @@ public class HandgunScriptLPFP : MonoBehaviour {
 			isInspecting = false;
 		}
 	}
+
+    
 }
 // ----- Low Poly FPS Pack Free Version -----

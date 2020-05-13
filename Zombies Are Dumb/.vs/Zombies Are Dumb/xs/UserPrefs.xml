@@ -1,14 +1,44 @@
 ﻿<Properties StartupConfiguration="{A79B09A8-721F-1324-BF55-E9181F655BCF}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FlockingAlgorithm/FilterScripts/PhysicsLayerFilter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FlockingAlgorithm/Flock.cs">
     <Files>
-      <File FileName="Assets/Scripts/FlockingAlgorithm/ContextFilter.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/FlockingAlgorithm/FilterScripts/PhysicsLayerFilter.cs" Line="29" Column="1" />
-      <File FileName="Assets/Scripts/FlockingAlgorithm/FilterScripts/SameFlockFilter.cs" Line="26" Column="1" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/ContextFilter.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/FilterScripts/PhysicsLayerFilter.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/FilterScripts/SameFlockFilter.cs" />
+      <File FileName="Assets/Scripts/GeneticAlgorithm/PopulationController.cs" />
+      <File FileName="Assets/Scripts/GeneticAlgorithm/DNA.cs" />
+      <File FileName="Assets/Scripts/GeneticAlgorithm/GeneticPathfinder.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/FlockAgent.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/FlockBehavior.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/Flock.cs" Line="69" Column="33" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/FilteredFlockBehavior.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/BehaviorScripts/AlignmentBehavior.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/BehaviorScripts/AvoidanceBehavior.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/BehaviorScripts/SteerCohesionBehavior.cs" />
+      <File FileName="Assets/Scripts/FlockingAlgorithm/BehaviorScripts/CompositeBehavior.cs" />
+      <File FileName="Assets/Scripts/LogicaEnemigo.cs" Line="21" Column="35" />
+      <File FileName="Assets/Scripts/LogicaJugador.cs" />
+      <File FileName="Assets/Scripts/ChasePlayer.cs" />
+      <File FileName="Assets/Scripts/brotherController.cs" />
+      <File FileName="Assets/Scripts/MenuButton.cs" />
+      <File FileName="Assets/Scripts/SettingsMenu.cs" />
+      <File FileName="Assets/Scripts/audioSettings.cs" />
+      <File FileName="Assets/Scripts/Music.cs" />
+      <File FileName="Assets/Scripts/SoundScript.cs" />
+      <File FileName="Assets/Scripts/checkScene.cs" />
+      <File FileName="Assets/Scripts/ChooseDifficulty.cs" />
+      <File FileName="Assets/Scripts/difficultySelector.cs" />
+      <File FileName="Assets/GenomaFacil.txt" />
+      <File FileName="Assets/GenomaDificil.txt" />
+      <File FileName="Assets/GenomaPrueba.txt" />
+      <File FileName="Assets/Low Poly FPS Pack - Free (Sample)/Components/Scripts/FPSController/FpsControllerLPFP.cs" />
+      <File FileName="Assets/GenomaNormal.txt" />
+      <File FileName="Assets/Scripts/Chase.cs" />
+      <File FileName="Assets/Low Poly FPS Pack - Free (Sample)/Components/Scripts/Weapon_Scripts/HandgunScriptLPFP.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6c84bff6-1723-4093-911c-1085aeaf8b94" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a3d05c6e-f04f-43fb-8830-324e2037fc73" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

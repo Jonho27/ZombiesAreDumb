@@ -33,7 +33,7 @@ public class GeneticPathfinder : MonoBehaviour
         {
             if(pathIndex == dna.genes.Count || Vector3.Distance(transform.position, target) < 0.5f)
             {
-                PopulationController.population[identifier].gameObject.transform.localScale = new Vector3(0, 0, 0);
+                //PopulationController.population[identifier].gameObject.transform.localScale = new Vector3(0, 0, 0);
                 hasFinished = true;
             }
             if((Vector3)transform.position == nextPoint)
@@ -76,7 +76,15 @@ public class GeneticPathfinder : MonoBehaviour
 			return (60/dist) * (hasCrashed ? 0.75f : 1f) * obstacleMultiplier;
         }
     }
-	
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 8)
+        {
+            hasFinished = true;
+            hasCrashed = true;
+        }
+    }
+   
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Obstacle")
